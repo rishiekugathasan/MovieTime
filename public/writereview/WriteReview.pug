@@ -1,0 +1,20 @@
+doctype html
+head
+    title User_1
+    link(rel='stylesheet' href='/WriteReview.css')
+#Header
+    a(href="/home/"+user.id)
+        button#home Home
+#user_prop
+    h3#user #{user.username}
+    a(href='/social/'+user.id)
+        button#social.buttons Social
+    form(action='/c_user/'+user.id,method='GET')
+        input#c_user.buttons(type='Submit',value='Upgrade')
+#review_ex
+    input#title.input(type='text' placeholder='Name of Review')
+    input#movietitle.input(type='text' placeholder="Movie title")
+    textarea#desc(cols='40' rows='5' placeholder='Description of Review')
+    input#score.input(type='number' placeholder='Score of Review')
+    button#submit.buttons Submit
+script(src='/WriteReview.js')

@@ -1,0 +1,27 @@
+doctype html
+-let user = obj.user
+-let movies = obj.moviearray
+-let movieIDS = obj.ids
+head
+    title HomePage
+    link(rel='stylesheet' href='/home.css')
+#Header
+    a(href="/home/"+user.id)
+        button#home Home
+#user_prop
+    h3#user #{user.username}
+    a(href='/user/' + user.id)
+        button#profile.buttons Profile
+
+    form(action='/c_user/'+user.id,method='GET')
+        input#c_user.buttons(type='Submit',value='Upgrade')
+h3#recommendation_title Recommended
+#body
+    -let counter = 0;
+    if movies != null || movies != undefined
+        each movie in movies
+            #mov1.recommended
+                a(href='/moviepage/'+user.id+'/movie/'+movieIDS[counter])
+                    p#mov1_name #{movie.title}
+            -counter++
+script(src='/home.js')

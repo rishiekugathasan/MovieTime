@@ -1,0 +1,61 @@
+doctype html
+-let movie = obj.mov
+-let user = obj.user
+-let staff = obj.people
+-let linkedpeople = obj.links
+-let keys = Object.keys(linkedpeople)
+-let similarMoviesKeys = Object.keys(obj.similar)
+-let similarMoviesValues = Object.values(obj.similar)
+-let id = obj.id
+
+head
+    title MoviePage
+    link(rel='stylesheet' href='/Moviepage.css')
+#Header
+    a(href="/home/"+user.id)
+        button#home Home
+#user_prop
+    h3#user #{user.username}
+    a(href='/user/'+user.id)
+        button#profile.buttons Profile
+    form(action='/c_user/'+user.id,method='GET')
+        input#c_user.buttons(type='Submit',value='Upgrade')
+    form(action="/moviepage/" + user.id + "/movie/" + id + "/watched",method='GET')
+        input#watched.buttons(type='Submit',value='Watched')
+#basic_info
+    h3#movie_title #{movie.title}
+    a(href='/writereview/'+user.id)
+        button#cuser_review.buttons Review + 
+    p#description #{movie.description}
+    #other_info
+        -let genre_string = ""
+        -let genres = movie.genres
+        each genre in genres 
+            -genre_string+=genre
+            -if(genres.length > 1 && genre != genres[genres.length-1]) {genre_string+=", "}
+        p#genres.other #{genre_string}
+        p#year.other #{movie.year}
+        p#rating.other #{movie.rating} /10
+        p#runtime.other #{movie.runtime}
+
+#similar_movies_andstaff
+    #secondary 
+        h3#similar_title Similar Movies
+        #similar_list
+        if similarMoviesKeys != null && similarMoviesValues != null
+        -let counter = 0;
+            each mov in similarMoviesValues
+                a(href="/moviepage/" + user.id + "/movie/" + similarMoviesKeys[counter])    
+                    p.s_movies #{mov.title}
+                -counter++
+    #tertiary
+        h3#staff_title Staff
+        #staff_list
+
+        each key in keys 
+            a(href='/personpage/'+user.id+'/person/'+key)
+                p.staff #{linkedpeople[key].name}
+        each dude in staff 
+            p.staff #{dude}
+
+script(src="/Moviepage.js")

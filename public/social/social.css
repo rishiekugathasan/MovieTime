@@ -1,0 +1,111 @@
+body {
+    margin: 0;
+    padding: 0;
+    background-color: rgb(23, 34, 84);
+}
+#Header {
+    background-color: rgb(17,25,61);
+    height: 75px;
+    margin-bottom: 0px;
+}
+#home {
+    background-color: lightsteelblue;
+    padding: 10px;
+    width: 110px;
+
+    /*First is from top-bottom, then left-right*/
+    margin: 12px 25px;
+
+    font-size: 25px;
+    color: white;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    border: 5px white;
+    border-radius: 10px;
+}
+#search {
+    position: absolute;
+    right: 12px;
+    top: 20px;
+
+    width: 325px;
+    height: 25px;
+
+    border: 15px lightsteelblue;
+    border-radius: 10px;
+}
+#user_prop {
+    background-color: rgb(17,25,61);
+    display: grid;
+    grid-template-columns: 1fr 0.1fr 0.1fr;
+}
+#user {
+    font-style: italic;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    color: white;
+    font-size: 30px;
+
+    margin: 10px
+}
+.buttons {
+    background-color: rgb(128, 128, 128);
+    font-size: 25px;
+    color: white;
+    border: 2px white solid;
+    border-radius: 10px;
+    cursor: pointer;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+
+    height: 40px;
+    margin: 10px
+}
+#followers {
+    background-color: rgb(39, 49, 97);
+    position: absolute;
+    left: 80px;
+    top: 200px;
+    width: 400px;
+    color: rgb(255,255,240);
+
+    border: 2px rgb(72,80,118) solid;
+    border-radius: 5px;
+   
+}
+#followers_title {
+    text-align: center;
+    font-size: 25px;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+#names_followers {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    text-align: center;
+    gap: 10px;
+}
+#vertical_line {
+    border: 2px rgb(22,39,122) solid;
+    position: absolute;
+    bottom: 5%;
+    left: 50%;
+    height: 350px
+}
+#following {
+    background-color: rgb(39, 49, 97);
+    position: absolute;
+    right: 80px;
+    top: 200px;
+    width: 400px;
+    border: 2px rgb(72,80,118) solid;
+    border-radius: 5px;
+    color: rgb(255,255,240);
+}
+#following_title {
+    text-align: center;
+    font-size: 25px;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+#names_following {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    text-align: center;
+    gap: 10px;
+}

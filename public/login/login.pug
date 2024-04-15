@@ -1,0 +1,16 @@
+doctype html
+head
+    link(rel='stylesheet' href='login.css')
+    title Login
+#Header
+    h1#title.header MovieTime
+    h3#second_title.header Discover Movies
+    button#signup.buttons(onclick='signUpButton()') Sign-Up
+br
+#user_input
+    h3#login Login
+    form(action='/loginfo', method='POST')
+        input#username.input(type='text', name='username', value='' placeholder='Username')
+        input#password.input(type='text', name='password', value='' placeholder='Password')
+        input#login_button.input(type='submit', value='Submit')
+script(src='login.js')

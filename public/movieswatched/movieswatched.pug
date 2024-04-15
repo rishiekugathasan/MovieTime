@@ -1,0 +1,26 @@
+doctype html 
+-let user = obj.user
+-let movieIDS = Object.keys(obj.watched)
+-let movies = obj.watched
+head
+    title Movies Watched Page
+    link(rel='stylesheet' href='/movieswatched.css')
+#Header
+    a(href="/home/"+user.id)
+        button#home Home
+#user_prop
+    h3#user #{user.username}
+    a(href='/user/' + user.id)
+        button#profile.buttons Profile
+
+    form(action='/c_user/'+user.id,method='GET')
+        input#c_user.buttons(type='Submit',value='Upgrade')
+h3#watched_title Movies Watched
+#body 
+    each id in movieIDS 
+        #watched
+            a(href='/moviepage/'+user.id+"/movie/"+id)
+                p #{movies[id].title}
+
+
+script(src='/movieswatched.js')

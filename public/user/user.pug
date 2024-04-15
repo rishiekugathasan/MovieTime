@@ -1,0 +1,44 @@
+doctype html
+-let user = obj.user
+-let reviewsArray = obj.reviews
+-let otheruser = obj.otherUser
+-let followunfollow = obj.followunfollow
+-let otheru = obj.otheru
+head
+    title User
+    link(rel='stylesheet' href='/user.css')
+#Header
+    if otheruser
+        a(href="/home/"+otheru.id)
+            button#home Home
+    if !otheruser 
+        a(href='/home/'+user.id)
+            button#home Home
+#user_prop
+    if otheruser
+        h3#user #{otheru.username}
+    if !otheruser
+        h3#user #{user.username}
+    if otheruser && followunfollow == "Follow"
+        button#follow.buttons(onclick="sendFollowRequest()") Follow
+    if otheruser && followunfollow == "Unfollow"
+        button#follow.buttons(onclick="sendFollowRequest()") Unfollow
+    if !otheruser
+        a(href='/social/'+user.id)
+            button#social.buttons Social
+    if otheruser 
+        a(href='/social/'+otheru.id)
+            button#social.buttons Social
+    if !otheruser
+        form(action='/c_user/'+user.id,method='GET')
+            input#c_user.buttons(type='Submit',value='Upgrade')
+    if otheruser
+        form(action='/c_user/'+otheru.id,method='GET')
+            input#c_user.buttons(type='Submit',value='Upgrade')
+each review in reviewsArray
+    #review_ex.reviews
+        label#movie_title.review_text #{review.title}
+        p#review_desc.review_text #{review.description}
+        p#movieID Movie ID : #{review.movieID}
+        p#score #{review.score}/100
+script(src='/user.js')

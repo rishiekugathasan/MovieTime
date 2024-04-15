@@ -1,0 +1,21 @@
+doctype html
+head
+    title Sign-Up
+    link(rel='stylesheet' href='signup.css')
+#Header
+    h1#title MovieTime
+    h3#second_title Discover Movies
+    button#log.buttons(onclick='logButton()') Login
+br
+#userInput
+    h3#signUp Sign-Up
+    input#new_user.input(type='text' placeholder='Username' value='')
+    br
+    input#new_pass.input(type='text' placeholder='Password' value='')
+    br
+    input#confirm.input(type='text' placeholder='Confirm Password' value='')
+    br
+    input#ToS(type='checkbox' checked='false')
+    label#ToSText Terms of Service
+    button#submit.input Submit
+script(src='signup.js')

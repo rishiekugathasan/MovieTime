@@ -1,0 +1,46 @@
+doctype html
+-let user = obj.user
+-let actors = obj.actors
+-let actorKeys = Object.keys(actors)
+-let movies = obj.movies
+-let movieKeys = Object.keys(movies)
+-let writers = obj.writers
+-let writerKeys = Object.keys(writers)
+
+head
+    title Search Page
+    link(rel='stylesheet' href='/search.css')
+#Header
+    a(href="/home/"+user.id)
+        button#home Home
+#user_prop
+    h3#user #{user.username}
+    a(href='/user/' + user.id)
+        button#profile.buttons Profile
+
+    form(action='/c_user/'+user.id,method='GET')
+        input#c_user.buttons(type='Submit',value='Upgrade')
+#searchInput
+    form(action='/search',method='POST')
+        input#searchBar(name='search',type='text',placeholder='Search')
+        input#submitSearch(type='Submit',value='GO')
+h3#search_title Search Results 
+    #movies.body
+        each elem in movieKeys
+            .recommended
+                a(href='/moviepage/'+user.id+"/movie/"+elem)
+                    p#movie #{movies[elem].title}
+    #actors.body
+        each elem in actorKeys
+            .recommended
+                a(href='/personpage/'+user.id+"/person/"+elem)
+                    p#actor #{actors[elem].name}
+    #writers.body
+        each elem in writerKeys
+            .recommended
+                a(href='/personpage/'+user.id+'/person/'+elem)
+                    p#writer #{writers[elem].name}
+
+
+
+script(src='/search.js')

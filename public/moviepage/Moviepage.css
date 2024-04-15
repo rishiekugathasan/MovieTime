@@ -1,0 +1,133 @@
+body {
+    margin: 0;
+    padding: 0;
+    background-color: rgb(23, 34, 84);
+}
+#Header {
+    background-color: rgb(17,25,61);
+    height: 75px;
+    margin-bottom: 0px;
+}
+#home {
+    background-color: lightsteelblue;
+    padding: 10px;
+    width: 110px;
+
+    /*First is from top-bottom, then left-right*/
+    margin: 12px 25px;
+
+    font-size: 25px;
+    color: white;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    border: 5px white;
+    border-radius: 10px;
+}
+#search {
+    position: absolute;
+    right: 12px;
+    top: 20px;
+
+    width: 325px;
+    height: 25px;
+
+    border: 15px lightsteelblue;
+    border-radius: 10px;
+}
+#user_prop {
+    background-color:  rgb(21,30,55);
+    display: grid;
+    grid-template-columns: 1fr 0.1fr 0.1fr 0.1fr;
+}
+#user {
+    font-style: italic;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    color: white;
+    font-size: 30px;
+
+    margin: 10px
+}
+.buttons {
+    background-color: rgb(128, 128, 128);
+    font-size: 25px;
+    color: white;
+    border: 2px white solid;
+    border-radius: 10px;
+    cursor: pointer;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+
+    height: 40px;
+    margin: 10px;
+}
+#basic_info {
+    background-color: rgb(39, 49, 97);
+    width: 1000px;
+    margin: auto;
+    margin-top: 50px;
+    border: 2px rgb(72,80,118) solid;
+    border-radius: 5px;
+    color: rgb(255,255,240);
+}
+#movie_title {
+    padding-left: 25px;
+    font-size: 40px;
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    color: rgb(255,255,240);
+}
+#user_review, #cuser_review {
+    position: relative;
+    left: 750px;
+    bottom: 100px
+}
+#description {
+    margin-top: -80px;
+    margin-left: 25px;
+}
+#other_info {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    text-align: center;
+    gap: 10px;
+    padding: 25px;
+}
+.other {
+    border: 2px rgb(255,255,240) solid;
+    border-radius: 15px;
+}
+#secondary {
+    background-color: rgb(39, 49, 97);
+    width: 400px;
+    margin-left: 130px;
+    margin-top: 50px;
+    margin-bottom: 50px;
+    color: rgb(255,255,240);
+
+    border: 3px rgb(72,80,118) solid;
+    border-radius: 10px;
+}
+#similar_list, #staff_list {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+}
+#similar_title, #staff_title {
+    text-align: center;
+    padding-top: 15px;
+}
+.s_movies, .staff {
+    padding-left: 70px;
+}
+#tertiary {
+    background-color: rgb(39, 49, 97);
+    width: 400px;
+    color: rgb(255,255,240);
+    margin-top: 50px;
+    margin-left: 90px;
+
+    border: 3px rgb(72,80,118) solid;
+    border-radius: 10px;
+}
+#similar_movies_andstaff {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    text-align: left;
+    gap: 10px;
+}

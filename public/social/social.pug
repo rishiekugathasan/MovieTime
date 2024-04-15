@@ -1,0 +1,30 @@
+doctype html
+-let user = obj.user
+-let followingarray = obj.following
+-let followersarray = obj.followers
+head
+    title Socials
+    link(rel='stylesheet' href='/social.css')
+#Header
+    a(href="/home/"+user.id)
+        button#home Home
+#user_prop
+    h3#user #{user.username}
+    a(href='/user/'+user.id)
+        button#profile.buttons Profile
+    form(action='/c_user/'+user.id,method='GET')
+        input#c_user.buttons(type='Submit',value='Upgrade')
+#followers
+    h3#followers_title Followers
+    ul#names_followers
+        each follower in followersarray
+            a(href='/user/'+follower.id)
+                li #{follower.username}
+#vertical_line
+#following
+    h3#following_title Following
+    ul#names_following
+        each following in followingarray
+            a(href='/user/'+following.id)  
+                li #{following.username}
+script(src='/social.js')

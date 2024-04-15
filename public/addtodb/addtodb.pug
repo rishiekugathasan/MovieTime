@@ -1,0 +1,39 @@
+doctype html
+-let user = obj.user
+head
+    title Add Movie
+    link(rel='stylesheet' href='/addtodb.css')
+#Header
+    a(href="/home/"+user.id)
+        button#home Home
+#user_prop
+    h3#user #{user.username}
+    a(href='/user/' + user.id)
+        button#profile.buttons Profile
+
+    form(action='/c_user/'+user.id,method='GET')
+        input#c_user.buttons(type='Submit',value='Upgrade')
+
+#addmovie
+    form(action='/insertMovie/'+user.id,method='POST')
+        input.input(name='title',type='text',placeholder='Name of Movie')
+        br
+        input.input(name='runtime',type='text',placeholder='Runtime')
+        br
+        input.input(name='year',type='text',placeholder='Year')
+        br
+        input.input(name='rating',type='text',placeholder='Rating')
+        br
+        input.input(name='genres',type='text',placeholder='Genres')
+        br
+        input.input(name='actors',type='text',placeholder='Actors')
+        br
+        input.input(name='writers',type='text',placeholder='Writers')
+        br
+        input.input(name='description',type='text',placeholder='Description')
+        br
+        input.input(name='directors',type='number',placeholder='Number of Directors')
+        br
+        input.buttons.input(type='Submit',value='Submit')
+
+script(src='/addtodb.js')

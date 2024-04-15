@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+	<head>
+		<title>MoviePage</title>
+		<link rel="stylesheet" href="/Moviepage.css">
+	</head>
+	<body>
+		<div id="Header">
+			<button id="home" onclick="homeButton()">Home</button>
+			<input type="text" placeholder="Search" id="search"></input>
+        </div>
+        <div id="user_prop">
+			<h3 id="user">User_Name_1</h3>
+			<button class ="buttons" id="profile" onclick="profileButton()">Profile</button>
+			<button class="buttons" id="c_user">Upgrade</button>
+        </div>
+		<div id="basic_info"> 
+			<h3 id="movie_title">Movie_Title</h3>
+			<button id="user_review" class="buttons" onclick="reviewButton()">Review</button>
+			<button id="cuser_review" class="buttons">Review + </button>
+			<p id="description">Ex. Self-proclaimed mad scientist Okabe Rintarou lives in a small room in Akihabara, where he invents "future 
+				gadgets" with fellow lab members Shiina Mayuri, his air-headed childhood friend, and Hashida Itaru, an otaku hacker. The three 
+				pass the time by tinkering with their latest creation, a "Phone Microwave" that can be controlled through text messages. </p>
+			<div id="other_info">
+				<p id="genres" class="other">Action, Comedy</p>
+				<p id="year" class="other">2001</p>
+				<p id="rating" class="other">80/100</p>
+				<p id="runtime" class="other">2:00:01</p>
+			</div>
+		</div>
+		<div id="secondary">
+			<h3 id="similar_title">Similar Movies</h3>
+			<div id="similar_list">
+				<p class="s_movies">Movie_1</p>
+				<p class="s_movies">Movie_2</p>
+				<p class="s_movies">Movie_3</p>
+				<p class="s_movies">Movie_4</p>
+				<p class="s_movies">Movie_5</p>
+			</div>
+		</div>
+		<div id="tertiary">
+			<h3 id="staff_title">Staff</h3>
+			<div id="staff_list">
+				<p onclick="personPage()" class="staff">Director_1</p>
+				<p onclick="personPage()" class="staff">Actor_1</p>
+				<p onclick="personPage()" class="staff">Actor_2</p>
+				<p onclick="personPage()" class="staff">Actor_3</p>
+				<p onclick="personPage()" class="staff">Director_2</p>
+			</div>
+		</div>
+	</body>
+	<script src="/Moviepage.js"></script>
+</html>

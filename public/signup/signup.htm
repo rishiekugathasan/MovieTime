@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+	<head>
+        <title>Sign-Up</title>
+        <link rel="stylesheet" href="signup.css">
+	</head>
+	<body>
+        <div id="Header">
+            <h1 id="title">MovieTime</h1>
+            <h3 id="second_title">Discover Movies</h3>
+            <button class ="buttons" id="log" onclick="logButton()">Login</button>
+        </div>
+		<br>
+        <div id="userInput">
+            <h3 id="signUp">Sign-Up</h3>
+            <input type="text" placeholder="Username" id="new_user" class="input" value=""></input>
+            <br>
+            <input type="text" placeholder="Password" id="new_pass" class="input" value=""></input>
+            <br>
+            <input type="text" placeholder="Confirm Password" id="confirm" class="input" value=""></input>
+            <br>
+		    <input type="checkbox" id="ToS" checked=false>
+            <label id="ToSText">Terms of Service</label>	
+            <button class="input" id="submit">Submit</button>
+        </div>
+    </body>
+    <script src="signup.js"></script>
+</html>

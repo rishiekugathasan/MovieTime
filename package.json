@@ -1,0 +1,22 @@
+{
+  "name": "MovDB_checkIn3",
+  "version": "1.0.0",
+  "description": "Author: \t\tRishie Kugathasan\r Project: \t\tMovie DataBase Project\r Student ID: \t\t101154994",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "body-parser": "^1.19.0",
+    "domain": "0.0.1",
+    "express": "^4.17.1",
+    "express-session": "^1.17.1",
+    "process": "^0.11.10",
+    "pug": "^3.0.2",
+    "response": "^0.18.0"
+  }
+}

@@ -1,0 +1,33 @@
+<!DOCTYPE html> 
+	<head>
+		<title>HomePage</title>
+		<link rel="stylesheet" href="home.css">
+	</head>
+	<body>
+		<div id="Header">
+			<button id="home">Home</button>
+			<input type="text" placeholder="Search" id="search"></input>
+        </div>
+        <div id="user_prop">
+			<h3 id="user">User_Name_1</h3>
+			<button class ="buttons" id="profile" onclick="profileButton()">Profile</button>
+			<button class="buttons" id="c_user">Upgrade</button>
+        </div>
+        <h3 id="recommendation_title">Recommended</h3>
+		<div id="body">
+			<div id="mov1" class="recommended">
+				<p onclick="moviePage()" id="mov1_name">Movie_1</p>
+			</div>
+			<div id="mov2" class="recommended">
+				<p onclick="moviePage()" id="mov2_name">Movie_2</p>
+			</div>
+			<div id="mov3" class="recommended">
+				<p onclick="moviePage()" id="mov3_name">Movie_3</p>
+			</div>
+			<div id="mov4" class="recommended">
+				<p onclick="moviePage()" id="mov4_name">Movie_4</p>
+			</div>
+		</div>
+	</body>
+	<script src="home.js"></script>
+</html>

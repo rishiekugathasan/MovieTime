@@ -1,0 +1,45 @@
+doctype html
+-let user = obj.user
+-let person = obj.person
+-let personeRoles = person.role
+-let collaborators = obj.collabs
+-let movies = obj.movies
+-let movIDS = obj.ids;
+head
+    title Person_Name
+    link(rel='stylesheet' href='/person.css')
+#Header
+    a(href="/home/"+user.id)
+        button#home Home
+#user_prop
+    h3#user #{user.username}
+    a(href='/user/' + user.id)
+        button#profile.buttons Profile
+    form(action='/c_user/'+user.id,method='GET')
+        input#c_user.buttons(type='Submit',value='Upgrade')
+#mainInfo
+    -let linkedpeople = obj.linked
+    -let keys = Object.keys(linkedpeople)
+    h1.name #{person.name}
+    h3#collaborator_title.collaborators Collaborators:
+
+    -let string = ""
+    each key in keys
+        a(href='/personpage/'+user.id+'/person/'+key)
+            -string+=linkedpeople[key].name
+            -if(keys.length > 1 && key != keys[keys.length-1]) {string += ", "}
+    -if(keys.length > 0 && collaborators.length > 0) {string += ", "}
+    each collaborator in collaborators
+        -string+=collaborator
+        -if(collaborators.length > 1 && collaborator != collaborators[collaborators.length-1]) {string += ", "}
+    p.collaborators #{string}
+h3#movies_roles Roles
+#roles
+    // Columns of 4
+    -let counter = 0
+    ul#related_movies
+        each movie in movies
+            a(href='/moviepage/'+user.id+'/movie/'+movIDS[counter])
+                li #{movie.title}
+            -counter++
+script(src='/person.js')
